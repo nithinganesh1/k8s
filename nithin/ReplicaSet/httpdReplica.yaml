@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: togother
+  labels:
+    name: disaster
+    name2: flood
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      name2: flood
+  template:
+    metadata:
+      labels:      
+        name2: flood
+    spec:
+      containers:
+      - name: app
+        image: httpd

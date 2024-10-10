@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx1service
+spec:
+  type: LoadBalancer
+  selector:
+    name: nginx2
+  ports:
+    - port: 80
+      targetPort: 80

@@ -96,3 +96,36 @@ when sheculer assigns a node, it assign kubelet to run it
 
 it pull the image and run the container 
 
+## Kube proxy
+network proxy that runs in every node in the cluster
+
+can set network rules
+
+## Container runtime environmnet
+
+docker, rocket, containerD, kubernetes CRI(conainer Runtime interface)
+
+
+# Pods
+
+## pods an container relation 
+* A VM is analogous to a pod, providing resources for processes to run.
+* A VM offers all necessary resources (CPU, RAM, networking) for its services, while the processes utilize them.
+* Similarly, pods supply all resources for containers to operate.Containers run within pods.
+* In this analogy, the container represents the process, and the pod functions like a VM.
+* There’s no traditional virtualization, but pods offer a level of isolation.
+
+## why use pods insted of running containers directly
+* Kubernetes can utilize different container runtime environments, providing flexibility in how containers are managed.
+
+* Pods provide an abstraction layer, allowing for a standardized set of commands and configurations, making deployment easier and more consistent.
+
+* You can access containers via podIP:port, simplifying network configurations and communication.
+
+* A pod can host one or more containers, allowing for closely related processes to share resources and network space.
+
+## should we run multiple containers in a pod
+
+* depends
+* idioly, there will be one container inside a pod, ohter container are hellper container
+* pod will be distributed along multiple worker nodes
